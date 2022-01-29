@@ -6,3 +6,14 @@ It is now maintained by the Multimodal Speech Processing Group in the Cluster of
 
 As of version 5.2, MaryTTS supports German, British and American English, French, Italian, Luxembourgish, Russian, Swedish, Telugu, and Turkish; more languages are in preparation.
 MaryTTS comes with toolkits for quickly adding support for new languages and for building unit selection and HMM-based synthesis voices.
+
+
+## How to run
+
+Run a MaryTTS server:
+
+```bash
+$ docker run -it -p 59125:59125 ghcr.io/mcicolella/marytts-docker:latest
+```
+
+You should now be able to access the server at [http://localhost:59125](http://localhost:59125)

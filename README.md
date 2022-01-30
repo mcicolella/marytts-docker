@@ -13,7 +13,29 @@ MaryTTS comes with toolkits for quickly adding support for new languages and for
 Run a MaryTTS server:
 
 ```bash
+$ docker run -it -p 59125:59125 mcicolella/marytts-docker:latest
+
 $ docker run -it -p 59125:59125 ghcr.io/mcicolella/marytts-docker:latest
 ```
 
 You should now be able to access the server at [http://localhost:59125](http://localhost:59125)
+
+## How to load specific voices
+
+With the `-v` or `--voice` option you can select the voices to load:
+
+```bash
+$ docker run -it -p 59125:59125 mcicolella/marytts-docker:latest --voice cmu-slt-hsmm --voice cmu-rms-hsmm
+
+$ docker run -it -p 59125:59125 ghcr.io/mcicolella/marytts-docker:latest --voice cmu-slt-hsmm --voice cmu-rms-hsmm
+```
+
+This way you can reduce the startup time and preserve the RAM.
+
+To list all the available voices you can execute:
+
+```bash
+$ docker run --rm -it mcicolella/marytts-docker:latest --voices
+
+$ docker run --rm -it ghcr.io/mcicolella/marytts-docker:latest --voices
+```
